@@ -1,0 +1,10 @@
+# Ignore Python virtual environments
+venv/
+env/
+.venv/
+
+# Ignore raw data files
+data
+
+# Ignore Processed data files
+processed_data
