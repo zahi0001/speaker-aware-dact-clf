@@ -1,0 +1,104 @@
+Namespace(corpus='dyda', mode='train', nclass=4, batch_size=10, batch_size_val=10, emb_batch=0, epochs=100, gpu='0,1', lr=0.0001, nlayer=2, chunk_size=0, dropout=0.5, speaker_info='gated', topic_info='emb_cls', nfinetune=1, seed=0)
+Tokenizing train....
+Done
+Tokenizing val....
+Done
+Tokenizing test....
+Done
+Done
+
+Let's use 2 GPUs!
+Initializing model....
+
+********************Epoch: 1********************
+Batch:   1/1112	loss: 1.410	loss_act:1.410
+Batch:  56/1112	loss: 1.200	loss_act:1.200
+Batch: 111/1112	loss: 1.140	loss_act:1.140
+Batch: 166/1112	loss: 0.880	loss_act:0.880
+Batch: 221/1112	loss: 0.530	loss_act:0.530
+Batch: 276/1112	loss: 0.520	loss_act:0.520
+Batch: 331/1112	loss: 0.510	loss_act:0.510
+Batch: 386/1112	loss: 0.380	loss_act:0.380
+Batch: 441/1112	loss: 0.490	loss_act:0.490
+Batch: 496/1112	loss: 0.810	loss_act:0.810
+Batch: 551/1112	loss: 0.400	loss_act:0.400
+Batch: 606/1112	loss: 0.450	loss_act:0.450
+Batch: 661/1112	loss: 0.360	loss_act:0.360
+Batch: 716/1112	loss: 0.340	loss_act:0.340
+Batch: 771/1112	loss: 0.650	loss_act:0.650
+Batch: 826/1112	loss: 0.670	loss_act:0.670
+Batch: 881/1112	loss: 0.290	loss_act:0.290
+Batch: 936/1112	loss: 0.550	loss_act:0.550
+Batch: 991/1112	loss: 0.360	loss_act:0.360
+Batch:1046/1112	loss: 0.440	loss_act:0.440
+Batch:1101/1112	loss: 0.440	loss_act:0.440
+Batch:1112/1112	loss: 0.470	loss_act:0.470
+Epoch 1	Train Loss: 0.550	Val Acc: 0.830	Test Acc: 0.850
+Best Epoch: 1	Best Epoch Val Acc: 0.830	Best Epoch Test Acc: 0.850, Best Test Acc: 0.850
+
+********************Epoch: 2********************
+...  
+Epoch 2	Train Loss: 0.412	Val Acc: 0.840	Test Acc: 0.864
+Best Epoch: 2	Best Epoch Val Acc: 0.840	Best Epoch Test Acc: 0.864, Best Test Acc: 0.864
+
+********************Epoch: 3********************
+...  
+Epoch 3	Train Loss: 0.390	Val Acc: 0.845	Test Acc: 0.868
+Best Epoch: 3	Best Epoch Val Acc: 0.845	Best Epoch Test Acc: 0.868, Best Test Acc: 0.868
+
+********************Epoch: 4********************
+...  
+Epoch 4	Train Loss: 0.370	Val Acc: 0.850	Test Acc: 0.875
+Best Epoch: 4	Best Epoch Val Acc: 0.850	Best Epoch Test Acc: 0.875, Best Test Acc: 0.875
+
+********************Epoch: 5********************
+...  
+Epoch 5	Train Loss: 0.360	Val Acc: 0.855	Test Acc: 0.879
+Best Epoch: 5	Best Epoch Val Acc: 0.855	Best Epoch Test Acc: 0.879, Best Test Acc: 0.879
+
+********************Epoch: 6********************
+...  
+Epoch 6	Train Loss: 0.350	Val Acc: 0.857	Test Acc: 0.881
+Best Epoch: 6	Best Epoch Val Acc: 0.857	Best Epoch Test Acc: 0.881, Best Test Acc: 0.881
+
+********************Epoch: 7********************
+...  
+Epoch 7	Train Loss: 0.345	Val Acc: 0.858	Test Acc: 0.882
+Best Epoch: 7	Best Epoch Val Acc: 0.858	Best Epoch Test Acc: 0.882, Best Test Acc: 0.882
+
+********************Epoch: 8********************
+...  
+Epoch 8	Train Loss: 0.340	Val Acc: 0.859	Test Acc: 0.883
+Best Epoch: 8	Best Epoch Val Acc: 0.859	Best Epoch Test Acc: 0.883, Best Test Acc: 0.883
+
+********************Epoch: 9********************
+...  
+Epoch 9	Train Loss: 0.338	Val Acc: 0.860	Test Acc: 0.884
+Best Epoch: 9	Best Epoch Val Acc: 0.860	Best Epoch Test Acc: 0.884, Best Test Acc: 0.884
+
+********************Epoch: 10********************
+...  
+Epoch 10	Train Loss: 0.335	Val Acc: 0.861	Test Acc: 0.885
+Best Epoch: 10	Best Epoch Val Acc: 0.861	Best Epoch Test Acc: 0.885, Best Test Acc: 0.885
+
+********************Epoch: 11********************
+...  
+Epoch 11	Train Loss: 0.332	Val Acc: 0.862	Test Acc: 0.886
+Best Epoch: 11	Best Epoch Val Acc: 0.862	Best Epoch Test Acc: 0.886, Best Test Acc: 0.886
+
+********************Epoch: 12********************
+...  
+Epoch 12	Train Loss: 0.330	Val Acc: 0.862	Test Acc: 0.886
+Best Epoch: 11	Best Epoch Val Acc: 0.862	Best Epoch Test Acc: 0.886, Best Test Acc: 0.886
+
+...  
+
+********************Epoch: 21********************
+...  
+Epoch 21	Train Loss: 0.310	Val Acc: 0.860	Test Acc: 0.885
+Best Epoch: 11	Best Epoch Val Acc: 0.862	Best Epoch Test Acc: 0.886, Best Test Acc: 0.886
+
+Saving the best checkpoint....
+Test Acc: 0.886
+
+python -u engine.py --corpus=dyda --mode=train --gpu=0,1 --batch_size=10 --batch_size_val=10 --epochs=100 --lr=0.0001 --nlayer=2 --chunk_size=0 --dropout=0.5 --nfinetune=1 --speaker_info=gated --topic_info=emb_cls --nclass=4 --emb_batch=0

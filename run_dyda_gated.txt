@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+import os
+
+# Script to train the gated-fusion variant on the DyDA corpus
+def main():
+    corpus = 'dyda'
+    mode = 'train'             # train or inference
+    nclass = 4                 # number of dialog-act classes
+    batch_size = 10            # training batch size
+    batch_size_val = 10        # evaluation batch size
+    emb_batch = 0              # batch size for embedding layer
+    epochs = 100               # number of epochs
+    gpu = '0,1'                # GPUs to use
+    lr = 1e-4                  # learning rate
+    nlayer = 2                 # GRU layers
+    chunk_size = 0             # no slicing (use full conversation)
+    dropout = 0.5              # dropout rate
+    nfinetune = 1              # BERT layers to finetune
+
+    # Use gated fusion for speaker and keep topic embeddings
+    speaker_info = 'gated'
+    topic_info = 'emb_cls'
+
+    # Prepare results directory
+    results_dir = f'results_{corpus}_gated'
+    os.makedirs(results_dir, exist_ok=True)
+
+    # Build and execute the command
+    command = (
+        f"python -u engine.py"
+        f" --corpus={corpus}"
+        f" --mode={mode}"
+        f" --nclass={nclass}"
+        f" --batch_size={batch_size}"
+        f" --batch_size_val={batch_size_val}"
+        f" --emb_batch={emb_batch}"
+        f" --epochs={epochs}"
+        f" --gpu={gpu}"
+        f" --lr={lr}"
+        f" --nlayer={nlayer}"
+        f" --chunk_size={chunk_size}"
+        f" --dropout={dropout}"
+        f" --nfinetune={nfinetune}"
+        f" --speaker_info={speaker_info}"
+        f" --topic_info={topic_info}"
+        f" --emb_batch={emb_batch}"
+    )
+
+    print("Running command:\n", command)
+    os.system(command)
+
+if __name__ == '__main__':
+    main()
